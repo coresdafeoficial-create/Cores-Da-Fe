@@ -1,0 +1,606 @@
+:root {
+    --primary-gradient: linear-gradient(180deg, #4A90E2 0%, #7FB3F5 100%);
+    --accent-verde: #00A859;
+    --accent-ouro: #F39C12;
+    --text-dark: #2D3436;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Quicksand', sans-serif; color: var(--text-dark); background: #fdfdfd; line-height: 1.5; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
+
+/* HERO - TOPO AZUL */
+.hero { background: var(--primary-gradient); color: white; padding: 80px 0; text-align: center; }
+.seguranca-topo { background: rgba(255,255,255,0.1); display: inline-block; padding: 5px 20px; border-radius: 50px; font-size: 12px; margin-bottom: 20px; }
+.hero h1 { font-family: 'Poppins'; font-size: 3rem; line-height: 1.1; margin-bottom: 20px; }
+.hero h1 span { display: block; color: #FFF; opacity: 0.9; }
+.mini-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 30px 0; }
+.mini-tags span { background: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 10px; font-size: 14px; }
+.btn-scroll { background: var(--accent-verde); color: white; text-decoration: none; padding: 15px 30px; border-radius: 50px; font-weight: bold; display: inline-block; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+/* BENEFÍCIOS */
+.porque-nos { padding: 80px 0; text-align: center; background: #FFF; }
+.beneficios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 40px; }
+.b-card { background: #f8faff; padding: 30px; border-radius: 20px; border: 1px solid #eef2f7; transition: 0.3s; }
+.b-card:hover { transform: translateY(-5px); }
+.b-icon { font-size: 40px; margin-bottom: 15px; }
+
+/* DEPOIMENTOS */
+.depoimentos { background: #F4F7F9; padding: 80px 0; text-align: center; }
+.estrelas { color: var(--accent-ouro); font-weight: bold; margin: 10px 0 40px; }
+.depoimentos-carrossel { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; justify-content: center; }
+.depoimentos-carrossel img { width: 250px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+
+/* PREÇOS (PRICING) */
+.pricing { padding: 80px 0; text-align: center; }
+.oferta-badge { background: #E74C3C; color: white; padding: 8px 20px; border-radius: 50px; display: inline-block; font-weight: bold; margin-bottom: 20px; }
+.pricing-wrapper { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 50px; }
+.card-p { background: white; padding: 40px; border-radius: 30px; width: 350px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); position: relative; }
+.card-p.premium { border: 3px solid #FFD166; transform: scale(1.05); }
+.selo-venda { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #F1C40F; padding: 5px 20px; border-radius: 50px; font-size: 12px; font-weight: bold; }
+.val { font-size: 3.5rem; font-weight: 800; color: var(--accent-verde); }
+.save { color: #95A5A6; font-size: 13px; }
+.bonus-box { background: #FFF9EB; padding: 20px; border-radius: 15px; text-align: left; margin: 20px 0; }
+.btn-pay { display: block; padding: 20px; border-radius: 15px; text-decoration: none; color: white; font-weight: bold; margin-top: 20px; }
+.verde { background: var(--accent-verde); }
+.ouro { background: var(--accent-ouro); }
+
+/* FAQ */
+.faq { padding: 80px 0; background: #FFF; text-align: center; }
+.faq-area { max-width: 700px; text-align: left; margin-top: 40px; }
+details { background: #f8faff; padding: 20px; border-radius: 15px; margin-bottom: 10px; cursor: pointer; }
+summary { font-weight: bold; }
+
+footer { padding: 40px; text-align: center; opacity: 0.6; font-size: 12px; }
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .card-p.premium { transform: scale(1); }
+}
+/* HERO - VERSÃO CORRIGIDA (Ocupa menos espaço) */
+.hero { 
+    background: var(--primary-gradient); 
+    color: white; 
+    padding: 60px 0; /* Diminuímos o respiro interno */
+    text-align: left; /* Alinhado à esquerda para o texto fluir melhor */
+}
+
+.hero-layout { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 40px; 
+}
+
+.hero-info { 
+    flex: 1; 
+    max-width: 600px; 
+}
+
+.seguranca-topo { 
+    background: rgba(255,255,255,0.1); 
+    display: inline-block; 
+    padding: 5px 15px; 
+    border-radius: 50px; 
+    font-size: 11px; 
+    margin-bottom: 15px; 
+}
+
+.hero h1 { 
+    font-family: 'Poppins'; 
+    font-size: 2.5rem; /* Tamanho mais equilibrado */
+    line-height: 1.1; 
+    margin-bottom: 15px; 
+}
+
+.mini-tags { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 8px; 
+    margin: 20px 0; 
+}
+
+.mini-tags span { 
+    background: rgba(255,255,255,0.15); 
+    padding: 6px 12px; 
+    border-radius: 8px; 
+    font-size: 13px; 
+}
+
+/* O SEGREDO PARA A IMAGEM NÃO FICAR ENORME */
+.hero-mockup { 
+    flex: 1; 
+    display: flex; 
+    justify-content: center; 
+}
+
+.hero-mockup img { 
+    width: 100%; 
+    max-width: 400px; /* Limita a largura máxima da capa */
+    height: auto; 
+    max-height: 450px; /* Limita a altura máxima da capa */
+    object-fit: contain; 
+    border-radius: 20px; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2); 
+    animation: float 4s ease-in-out infinite;
+}
+
+/* AJUSTE PARA CELULAR (A imagem vai para baixo do texto) */
+@media (max-width: 768px) {
+    .hero { text-align: center; padding: 40px 0; }
+    .hero-layout { flex-direction: column; }
+    .hero h1 { font-size: 2rem; }
+    .mini-tags { justify-content: center; }
+    .hero-mockup img { max-width: 280px; }
+}
+/* --- ANIMAÇÕES DA TABELA DE PREÇOS --- */
+
+/* 1. Surgimento Suave ao Carregar */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-p {
+    animation: fadeInUp 0.8s ease-out forwards;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efeito elástico */
+}
+
+/* Atraso para o segundo card (Premium) aparecer depois */
+.card-p.premium {
+    animation-delay: 0.3s;
+}
+
+/* 2. Efeito de Hover (Mouse em cima) */
+.card-p:hover {
+    transform: translateY(-15px) scale(1.03); /* Ele sobe e aumenta um pouco */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+
+/* 3. Brilho no Botão de Compra */
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(0, 168, 89, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(0, 168, 89, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 168, 89, 0); }
+}
+
+.btn-pay.verde {
+    animation: pulse-green 2s infinite;
+}
+
+/* 4. Animação do Selo "Mais Vendido" */
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.selo-venda {
+    overflow: hidden;
+}
+
+.selo-venda::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shine 3s infinite;
+}
+
+/* 5. Efeito nos Bônus */
+.bonus-box p {
+    transition: transform 0.2s;
+}
+
+.card-p:hover .bonus-box p {
+    transform: translateX(5px); /* Move levemente o texto do bônus ao focar no card */
+}
+/* Forçar o texto a não quebrar linha */
+.p-list li, 
+.bonus-item, 
+.mini-tags span {
+    white-space: nowrap;       /* Impede a quebra de linha */
+    overflow: hidden;          /* Garante que nada saia do card */
+    text-overflow: ellipsis;   /* Adiciona "..." se o texto for absurdamente longo */
+    display: block;
+    font-size: 0.9rem;         /* Reduzi levemente para caber melhor */
+}
+
+/* Ajuste na largura dos cards para dar mais espaço ao texto */
+.p-card {
+    width: 380px;              /* Aumentei a largura original de 350px */
+    padding: 40px 30px;        /* Menos preenchimento lateral para sobrar espaço interno */
+}
+
+/* Ajuste nos itens de bônus para ficarem iguais à imagem enviada */
+.bonus-item {
+    background: #FFF9EB;
+    padding: 8px 10px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    border-left: 4px solid var(--gold);
+    text-align: left;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Responsividade: No celular, permitimos a quebra para não quebrar o layout */
+@media (max-width: 480px) {
+    .p-list li, .bonus-item {
+        white-space: normal;   /* No celular muito pequeno, a quebra é necessária */
+    }
+    .p-card {
+        width: 100%;           /* O card ocupa a tela toda no celular */
+    }
+}
+/* --- REMOVENDO OS PONTOS E FORÇANDO LINHA ÚNICA --- */
+
+.p-list {
+    list-style: none; /* Isso remove os pontos pretos indesejados */
+    padding: 0;
+    margin: 25px 0;
+}
+
+.p-list li {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;      /* Força o texto a não quebrar linha */
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    color: #444;
+}
+
+/* Adicionando o check verde via CSS para ficar alinhado */
+.p-list li::before {
+    content: '✅';             /* Usa o emoji de check */
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* --- AJUSTE DOS BÔNUS (PACOTE PREMIUM) --- */
+
+.bonus-item {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;      /* Impede que o bônus quebre linha */
+    background: #FFF9EB;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-left: 4px solid #FFD166;
+    overflow: hidden;         /* Proteção extra para não vazar do card */
+}
+
+/* AJUSTE FINAL DO CARD (PARA CABER TUDO RETO) */
+.p-card {
+    width: 400px;             /* Aumentamos um pouco a largura para garantir a linha única */
+    min-width: 350px;
+    padding: 40px 25px;
+}
+/* ESTILO DA NOTIFICAÇÃO DE VENDA */
+.venda-notification {
+    position: fixed;
+    bottom: 20px;
+    left: -350px; /* Começa escondido fora da tela */
+    background: white;
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 9999;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-left: 5px solid #06D6A0; /* Barrinha verde de sucesso */
+}
+
+.venda-notification.show {
+    left: 20px; /* Aparece na tela */
+}
+
+.venda-img img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f0f0f0;
+}
+
+.venda-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.venda-info span {
+    font-size: 12px;
+    color: #999;
+}
+/* Remove de vez os pontos pretos da foto 46a3657a */
+ul, li, .p-list {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* Força o bônus a ficar em uma linha só (Foto e526d8a4) */
+.p-list li, .bonus-item {
+    white-space: nowrap !important; /* Impede a quebra de linha */
+    display: flex;
+    align-items: center;
+}
+
+/* Se o texto for muito grande para o card, ele diminui um pouco a fonte */
+@media (max-width: 1200px) {
+    .p-list li {
+        font-size: 0.85rem;
+    }
+}
+.faq-premium {
+    background: #f4f7fa; /* Fundo levemente cinza para destacar os cards brancos */
+    padding: 80px 0;
+}
+
+.faq-item {
+    background: #ffffff;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Sombra suave para dar "vida" */
+    overflow: hidden;
+    border: 1px solid #e1e8f0;
+}
+
+.faq-pergunta {
+    width: 100%;
+    padding: 20px 25px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d3436;
+    cursor: pointer;
+    text-align: left;
+}
+
+.faq-resposta {
+    padding: 0 25px 20px;
+    color: #636e72;
+    line-height: 1.6;
+}
+.garantia-box {
+    background: #eef5ff; /* Azul bem clarinho para combinar com o topo */
+    border: 2px dashed #4A90E2; /* Borda tracejada profissional */
+    border-radius: 30px;
+    padding: 60px 30px;
+    text-align: center;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.garantia-box h3 {
+    font-size: 2rem;
+    color: #1a3a5a;
+    margin-top: 15px;
+}
+/* CONTAINER DO FAQ */
+.faq-premium {
+    background-color: #F8FAFF !important; /* Fundo cinza azulado para destacar os cards */
+    padding: 100px 20px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-menor {
+    width: 100%;
+    max-width: 800px; /* Impede que o FAQ espalhe na tela toda */
+}
+
+/* CADA ITEM DO FAQ */
+.faq-item {
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    margin-bottom: 20px !important;
+    padding: 20px 30px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid #E2E8F0 !important;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.faq-pergunta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1A202C;
+}
+
+.faq-resposta {
+    margin-top: 15px;
+    color: #4A5568;
+    line-height: 1.6;
+    border-top: 1px solid #EDF2F7;
+    padding-top: 15px;
+}
+.garantia-box {
+    background: white !important;
+    border: 2px dashed #4A90E2 !important;
+    border-radius: 30px !important;
+    padding: 60px 40px !important;
+    text-align: center !important;
+    max-width: 800px !important;
+    margin: 50px auto !important; /* Centraliza na página */
+    box-shadow: 0 20px 50px rgba(74, 144, 226, 0.1) !important;
+}
+
+.garantia-box img {
+    width: 80px !important; /* Tamanho controlado do ícone */
+    height: auto;
+    margin-bottom: 20px;
+}
+.secao-garantia-final {
+    background-color: #f8f9fa; /* Fundo cinza bem clarinho da página */
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quadro-garantia {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 40px; /* Bordas bem redondas como na foto */
+    padding: 60px 40px 40px 40px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03); /* Sombra bem leve */
+    position: relative;
+    border: 1px solid #e9ecef;
+}
+
+/* Centraliza o escudo verde */
+.escudo-container img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.quadro-garantia h3 {
+    font-size: 1.8rem;
+    color: #1a202c;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+}
+
+.quadro-garantia p {
+    color: #718096;
+    margin-bottom: 40px;
+}
+
+/* Linha dos selos lá embaixo */
+.selos-seguranca-linha {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    border-top: 1px solid #f1f1f1;
+    padding-top: 30px;
+}
+
+.selo-unitario {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.selo-unitario img {
+    width: 20px;
+}
+
+.rodape-simples {
+    margin-top: 40px;
+    color: #a0aec0;
+    font-size: 0.8rem;
+}
+.depoimentos-vivos {
+    padding: 80px 0;
+    background-color: #f8faff;
+    overflow: hidden; /* Importante para não criar barra de rolagem embaixo */
+    text-align: center;
+}
+
+.depoimentos-header {
+    margin-bottom: 40px;
+}
+
+.rating-stars {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+/* Container do movimento */
+.carrossel-infinito {
+    width: 100%;
+    display: flex;
+}
+
+.carrossel-track {
+    display: flex;
+    gap: 20px;
+    /* Calcula a largura total: (largura do card + gap) * total de imagens */
+    width: calc((300px + 20px) * 8); 
+    animation: deslizar 40s linear infinite;
+}
+
+/* Pausa ao passar o mouse para o cliente conseguir ler o print */
+.carrossel-track:hover {
+    animation-play-state: paused;
+}
+
+.card-wpp {
+    min-width: 300px;
+}
+
+.card-wpp img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border: 1px solid #eef2f7;
+}
+
+/* Animação que faz o deslize */
+@keyframes deslizar {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc((-300px - 20px) * 4)); }
+}
+/* CONTAINER DO MOVIMENTO (Sem alteração) */
+.carrossel-infinito {
+    width: 100%;
+    display: flex;
+}
+
+/* 1. ATUALIZAÇÃO DA LARGURA TOTAL DA TRILHA */
+.carrossel-track {
+    display: flex;
+    gap: 15px; /* Reduzi o gap para combinar com as imagens menores */
+    /* Novo Cálculo: (Nova largura + Novo gap) * total de imagens (8) */
+    width: calc((220px + 15px) * 8); 
+    animation: deslizar 35s linear infinite; /* Animação um pouco mais rápida para compensar */
+}
+
+/* 2. ATUALIZAÇÃO DA LARGURA DE CADA PRINT (DIMINUIÇÃO) */
+.card-wpp {
+    min-width: 220px; /* Reduzi de 300px para 220px */
+}
+
+/* ESTILO DA IMAGEM (Sem alteração) */
+.card-wpp img {
+    width: 100%;
+    border-radius: 15px; /* Arredondamento menor para combinar */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05); /* Sombra mais suave */
+    border: 1px solid #eef2f7;
+}
+
+/* 3. ATUALIZAÇÃO DO MOTOR DA ANIMAÇÃO (PONTO DE RETORNO) */
+@keyframes deslizar {
+    0% { transform: translateX(0); }
+    /* Novo Cálculo: (-Nova largura - Novo gap) * 4 prints originais */
+    100% { transform: translateX(calc((-220px - 15px) * 4)); }
+}
