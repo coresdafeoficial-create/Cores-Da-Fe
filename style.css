@@ -1,0 +1,703 @@
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    background-color: #f9fbfd;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita barra de rolagem lateral por causa dos flutuantes */
+}
+
+/* Cabeçalho */
+header {
+    background: white;
+    padding: 15px 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4A90E2;
+}
+
+.btn-topo {
+    background: #FFD700;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-topo:hover { transform: scale(1.05); }
+
+/* --- HERO SECTION (Ajustada) --- */
+.hero {
+    padding: 80px 5%;
+    background: linear-gradient(180deg, #eef6ff 0%, #f9fbfd 100%);
+    display: flex;
+    justify-content: center;
+}
+
+.container-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    color: #2c3e50;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    color: #546e7a;
+    margin-bottom: 25px;
+}
+
+.estrelas {
+    color: #f1c40f;
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.btn-hero {
+    background: #4A90E2;
+    color: white;
+    border: none;
+    padding: 18px 35px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Lado da Imagem e Flutuantes */
+.hero-image {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.capa-principal {
+    max-width: 320px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    z-index: 1;
+}
+
+.flutuante {
+    position: absolute;
+    background: white;
+    padding: 12px 18px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 210px;
+    z-index: 2;
+    border-left: 5px solid #FFD700;
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+.flutuante h3 { font-size: 0.9rem; margin-bottom: 4px; color: #2c3e50; }
+.flutuante p { font-size: 0.75rem; color: #78909c; line-height: 1.3; }
+
+/* Posicionamento dos balões ao redor da capa */
+.tema-1 { top: -10px; left: -60px; border-left-color: #4A90E2; }
+.tema-2 { top: 70px; right: -70px; border-left-color: #FFD700; animation-delay: 0.5s; }
+.tema-3 { bottom: 60px; left: -80px; border-left-color: #27ae60; animation-delay: 1s; }
+.tema-4 { bottom: -10px; right: -30px; border-left-color: #e74c3c; animation-delay: 1.5s; }
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* --- DEPOIMENTOS / CARROSSEL --- */
+.depoimentos {
+    text-align: center;
+    padding: 80px 5%;
+    background: white;
+}
+
+.carrossel-container {
+    position: relative;
+    max-width: 700px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.carrossel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.slide {
+    min-width: 100%;
+    padding: 10px;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* --- AJUDA / FAQ --- */
+.ajuda {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.ajuda h3 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+
+.pergunta {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border-left: 6px solid #FFD700;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+/* NOTIFICAÇÃO POPUP */
+.notificacao {
+    position: fixed;
+    bottom: -100px;
+    left: 20px;
+    background: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: all 0.5s ease;
+    border-left: 5px solid #27ae60;
+    z-index: 9999;
+}
+
+.notificacao.mostrar { bottom: 20px; }
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .container-hero { flex-direction: column; text-align: center; }
+    .hero-text { text-align: center; padding-right: 0; }
+    .hero-image { margin-top: 60px; }
+    .flutuante { position: relative; left: 0!important; right: 0!important; top: 0!important; bottom: 0!important; margin: 10px auto; }
+}
+/* --- VITRINE DE LIVROS (Carrossel Infinito) --- */
+.vitrine-livros {
+    padding: 60px 0;
+    text-align: center;
+    background: #fff;
+    overflow: hidden;
+}
+
+.vitrine-container {
+    margin-top: 30px;
+    display: flex;
+}
+
+.vitrine-track {
+    display: flex;
+    gap: 20px;
+    animation: scrollInfinito 20s linear infinite; /* Carrossel que se move sozinho */
+}
+
+.livro-preview {
+    width: 200px;
+    height: 280px;
+    background: #eee;
+    border-radius: 10px;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.livro-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@keyframes scrollInfinito {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- ANIMAÇÃO DA GARANTIA --- */
+.garantia-animada {
+    display: inline-flex;
+    align-items: center;
+    background: white;
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    border: 2px solid #27ae60;
+    animation: pulsarGarantia 2s infinite; /* Pulsa para chamar atenção */
+}
+
+.garantia-animada img {
+    width: 60px;
+    margin-right: 20px;
+}
+
+.garantia-texto h3 {
+    color: #27ae60;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+@keyframes pulsarGarantia {
+    0% { transform: scale(1); box-shadow: 0 10px 30px rgba(39, 174, 96, 0.1); }
+    50% { transform: scale(1.03); box-shadow: 0 10px 40px rgba(39, 174, 96, 0.3); }
+    100% { transform: scale(1); box-shadow: 0 10px 30px rgba(39, 174, 96, 0.1); }
+}
+/* --- FOOTER E GARANTIA MELHORADA --- */
+.rodape-seguro {
+    padding: 80px 20px 40px 20px;
+    background-color: #f0f4f8; /* Cinza azulado bem leve */
+    text-align: center;
+}
+
+.container-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo horizontalmente */
+}
+
+.garantia-animada {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo interno */
+    background: white;
+    padding: 30px 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    max-width: 700px;
+    border: 2px solid #e1e8ed;
+    margin-bottom: 40px;
+    animation: pulsarGarantia 3s infinite ease-in-out;
+}
+
+.selo-wrapper img {
+    width: 80px;
+    height: auto;
+    margin-right: 30px;
+}
+
+.garantia-texto {
+    text-align: left; /* Texto alinhado à esquerda dentro do bloco centralizado */
+}
+
+.garantia-texto h3 {
+    color: #27ae60;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.garantia-texto p {
+    color: #546e7a;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.seguranca-site p {
+    font-size: 0.9rem;
+    color: #90a4ae;
+    margin-bottom: 10px;
+}
+
+.icones-seguros {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.badget-seguro {
+    font-size: 0.75rem;
+    background: #cfd8dc;
+    color: #546e7a;
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Animação de pulso mais suave */
+@keyframes pulsarGarantia {
+    0% { transform: scale(1); border-color: #e1e8ed; }
+    50% { transform: scale(1.02); border-color: #27ae60; }
+    100% { transform: scale(1); border-color: #e1e8ed; }
+}
+
+/* Ajuste para Celular */
+@media (max-width: 600px) {
+    .garantia-animada {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    .selo-wrapper img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .garantia-texto {
+        text-align: center;
+    }
+}
+/* --- SEÇÃO DE PREÇOS ULTRA REFINADA --- */
+.secao-precos {
+    padding: 100px 20px;
+    background: #fdfdfd;
+    text-align: center;
+}
+
+.cards-precos {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Deixa os dois com alturas harmoniosas */
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+/* --- NOVO PLANO BÁSICO (Atrativo e Colorido) --- */
+.card-preco:not(.destaque) {
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 50px 40px;
+    width: 350px;
+    border: 3px solid #f0f4f8; /* Borda sutil mas presente */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-preco:not(.destaque):hover {
+    border-color: #FFD700; /* Fica amarelo quando passa o mouse */
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.15);
+}
+
+/* Título e Valor do Básico */
+.card-preco:not(.destaque) h3 {
+    color: #4A90E2;
+    font-size: 1.8rem;
+}
+
+.card-preco:not(.destaque) .valor {
+    color: #4A90E2;
+}
+
+/* --- NOVO PLANO PRIME (O ápice do Luxo) --- */
+.card-preco.destaque {
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 60px 40px;
+    width: 380px;
+    position: relative;
+    border: none;
+    box-shadow: 0 20px 50px rgba(74, 144, 226, 0.25);
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Efeito de luz no fundo do Prime */
+.card-preco.destaque::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(74,144,226,0.05) 0%, transparent 70%);
+    z-index: -1;
+}
+
+/* Badges e Selos */
+.badge-destaque {
+    background: linear-gradient(90deg, #4A90E2, #27ae60);
+    color: white;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Itens da Lista */
+.lista-recursos li {
+    padding: 12px 0;
+    color: #475569;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lista-recursos li::before {
+    content: "🎨"; /* Ícone de paleta para combinar com o tema */
+    font-size: 0.9rem;
+}
+
+/* Botões Modernos */
+.btn-comprar {
+    margin-top: auto; /* Empurra o botão para o final do card */
+    padding: 18px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+/* Botão do Básico - Agora azul e convidativo */
+.card-preco:not(.destaque) .btn-comprar {
+    background: #eef6ff;
+    color: #4A90E2;
+    border: 2px solid #4A90E2;
+}
+
+.card-preco:not(.destaque) .btn-comprar:hover {
+    background: #4A90E2;
+    color: white;
+}
+
+/* Botão do Prime - Verde e Poderoso */
+
+.btn-prime {
+    background: #27ae60;
+    color: white;
+    box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
+}
+
+.btn-prime:hover {
+    background: #219150;
+    transform: scale(1.05);
+}
+/* --- ANIMAÇÕES DE MOVIMENTO --- */
+
+/* 1. Animação de respiração (flutuar devagar) */
+@keyframes flutuarLento {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* 2. Animação de brilho que passa pelo card */
+@keyframes brilhoPassageiro {
+    0% { left: -150%; }
+    100% { left: 150%; }
+}
+
+/* --- ESTILO DOS CARDS ATUALIZADO --- */
+
+.card-preco {
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 50px 40px;
+    width: 350px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    overflow: hidden; /* Importante para o brilho não sair do card */
+    
+    /* Aplica a animação de flutuar sozinho */
+    animation: flutuarLento 4s ease-in-out infinite;
+}
+
+/* Faz o Prime flutuar em um tempo diferente para não ficarem iguais */
+.card-preco.destaque {
+    animation-delay: 1s; 
+    width: 380px;
+}
+
+/* --- INTERAÇÃO (Mouse em cima ou Toque no Celular) --- */
+
+.card-preco:hover, .card-preco:active {
+    transform: scale(1.05) translateY(-20px) !important;
+    animation-play-state: paused; /* Para de flutuar quando você interage */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    z-index: 10;
+}
+
+/* Efeito de brilho ao passar o mouse */
+.card-preco::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: all 0.6s;
+    z-index: 2;
+}
+
+.card-preco:hover::before {
+    animation: brilhoPassageiro 0.8s;
+}
+
+/* Destaque extra para a borda do Prime no hover */
+.card-preco.destaque:hover {
+    box-shadow: 0 30px 70px rgba(74, 144, 226, 0.4);
+    border: 2px solid #4A90E2;
+}
+
+/* Ajuste do botão dentro do card no hover */
+.card-preco:hover .btn-comprar {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+/* --- CORREÇÃO DE RESPONSIVIDADE (HERO) --- */
+
+@media (max-width: 900px) {
+    .container-hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .hero-text {
+        padding-right: 0;
+        order: 1;
+    }
+
+    .hero-image {
+        order: 2;
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .capa-principal {
+        max-width: 220px; /* Um pouco menor para dar espaço aos balões */
+        margin-bottom: 20px;
+    }
+
+    /* REATIVANDO A ANIMAÇÃO NO CELULAR DE FORMA SEGURA */
+    .flutuante {
+        position: relative !important; /* Mantém na coluna */
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 95%; /* Quase a largura toda */
+        max-width: 320px;
+        margin: 10px auto;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        
+        /* Reativando a animação */
+        animation: flutuarCelular 3s ease-in-out infinite !important;
+    }
+
+    /* Criamos uma animação específica para o celular que não usa o eixo X (lados) */
+    @keyframes flutuarCelular {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); } /* Movimento apenas para cima e baixo */
+    }
+
+    /* Delays diferentes para cada um não subir ao mesmo tempo no celular */
+    .tema-1 { animation-delay: 0s !important; }
+    .tema-2 { animation-delay: 0.5s !important; }
+    .tema-3 { animation-delay: 1s !important; }
+    .tema-4 { animation-delay: 1.5s !important; }
+}
+/* --- AJUSTE DOS PRINTS DE DEPOIMENTOS --- */
+.carrossel-container {
+    max-width: 600px; /* Reduzi um pouco a largura máxima do container */
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza a imagem no slide */
+    align-items: center;
+    padding: 20px;
+}
+
+.slide img {
+    /* O SEGREDO ESTÁ AQUI: */
+    max-height: 450px; /* Define uma altura máxima para o print não ser gigante */
+    width: auto;       /* Mantém a largura proporcional à altura */
+    max-width: 100%;   /* Garante que não escape para os lados no celular */
+    
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border: 1px solid #eee; /* Uma bordinha fina para dar acabamento */
+    object-fit: contain;    /* Garante que a imagem inteira apareça sem cortes */
+}
+
+/* Ajuste específico para o Celular */
+@media (max-width: 600px) {
+    .slide img {
+        max-height: 350px; /* No celular, o print fica um pouco menor */
+    }
+    
+    .carrossel-container {
+        max-width: 90% ;
+    }
+}
+.carrossel-track {
+    display: flex; /* Coloca os prints um ao lado do outro na mesma linha */
+    transition: transform 0.6s ease-in-out; /* Dá o efeito de deslizar suave */
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%; /* Garante que cada print ocupe todo o espaço do container */
+    box-sizing: border-box;
+}
